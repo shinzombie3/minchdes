@@ -1,23 +1,24 @@
 ---
 import "../css/Header.css";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const currentPath = Astro.url.pathname;
-const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 
 const isCurrent = (path: string) => {
-  return currentPath === `${base}${path}`;
+  return currentPath === `${base}/${path}`;
 };
 ---
 
 <header class="header">
   <div class="header-inner">
-    <a href={base} class="logo">
+    <a href={`${base}/`} class="logo">
       仮
     </a>
 
     <nav class="nav" aria-label="メインメニュー">
       <a
-        href={base}
+        href={`${base}/`}
         class="nav-link"
         aria-current={isCurrent("") ? "page" : undefined}
       >
@@ -25,7 +26,7 @@ const isCurrent = (path: string) => {
       </a>
 
       <a
-        href={`${base}contents/`}
+        href={`${base}/contents/`}
         class="nav-link"
         aria-current={isCurrent("contents/") ? "page" : undefined}
       >
@@ -33,7 +34,7 @@ const isCurrent = (path: string) => {
       </a>
 
       <a
-        href={`${base}about/`}
+        href={`${base}/about/`}
         class="nav-link"
         aria-current={isCurrent("about/") ? "page" : undefined}
       >
