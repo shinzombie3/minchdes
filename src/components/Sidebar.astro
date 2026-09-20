@@ -23,6 +23,10 @@ for (const entry of entries) {
 for (const items of categories.values()) {
   items.sort((a, b) => a.data.order - b.data.order);
 }
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <aside class="sidebar">
@@ -65,7 +69,7 @@ for (const items of categories.values()) {
             <ul class="children">
               {items.map((item) => (
                 <li>
-                  <a href={`/contents/${item.id}/`}>
+                  <a href={`{base}contents/${item.id}/`}>
                     {item.data.title}
                   </a>
                 </li>
