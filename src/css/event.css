@@ -139,7 +139,7 @@
     }
 
     .row-container {
-        flex-direction: row;
+        flex-direction: column;
         align-items: stretch;
         gap: 20px;
     }
