@@ -1,0 +1,49 @@
+---
+import "../css/Header.css";
+
+const pathname = Astro.url.pathname;
+
+const isCurrent = (path: string) => {
+  // Home
+  if (path === "/") {
+    return pathname === "/";
+  }
+
+  // 下層ページも選択状態にする
+  return pathname === path || pathname.startsWith(`${path}/`);
+};
+---
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      仮
+    </a>
+
+    <nav class="nav" aria-label="メインメニュー">
+      <a
+        href="/"
+        class="nav-link"
+        aria-current={isCurrent("/") ? "page" : undefined}
+      >
+        Home
+      </a>
+
+      <a
+        href="/contents/"
+        class="nav-link"
+        aria-current={isCurrent("/contents") ? "page" : undefined}
+      >
+        Contents
+      </a>
+
+      <a
+        href="/about/"
+        class="nav-link"
+        aria-current={isCurrent("/about") ? "page" : undefined}
+      >
+        About
+      </a>
+    </nav>
+  </div>
+</header>

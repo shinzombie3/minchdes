@@ -1,0 +1,157 @@
+---
+import { getCollection } from "astro:content";
+import "../css/Sidebar.css";
+
+const entries = await getCollection("contents");
+
+type ContentEntry = (typeof entries)[number];
+
+const categories = new Map<string, ContentEntry[]>();
+
+for (const entry of entries) {
+  const [category] = entry.id.split("/");
+
+  if (!category) continue;
+
+  if (!categories.has(category)) {
+    categories.set(category, []);
+  }
+
+  categories.get(category)!.push(entry);
+}
+
+for (const items of categories.values()) {
+  items.sort((a, b) => a.data.order - b.data.order);
+}
+---
+
+<aside class="sidebar">
+  <!-- スマホのみ表示 -->
+  <button
+    class="mobile-menu-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="contents-sidebar"
+  >
+    <span class="hamburger" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <span>Contents</span>
+  </button>
+
+  <!-- サイドバー本体 -->
+  <nav
+    id="contents-sidebar"
+    class="sidebar-content"
+    aria-label="Contents"
+  >
+    {
+      Array.from(categories.entries()).map(
+        ([category, items]) => (
+          <section class="category">
+            <button
+              class="category-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="arrow">+</span>
+              <span>{category}</span>
+              
+            </button>
+
+            <ul class="children">
+              {items.map((item) => (
+                <li>
+                  <a href={`/contents/${item.id}/`}>
+                    {item.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ),
+      )
+    }
+  </nav>
+</aside>
+
+<script>
+  // -----------------------------
+  // スマホ：サイドバー開閉
+  // -----------------------------
+
+  const mobileButton =
+    document.querySelector<HTMLButtonElement>(
+      ".mobile-menu-button",
+    );
+
+  const sidebarContent =
+    document.querySelector<HTMLElement>(
+      "#contents-sidebar",
+    );
+
+  mobileButton?.addEventListener("click", () => {
+    if (!sidebarContent) return;
+
+    const isOpen =
+      mobileButton.getAttribute("aria-expanded") ===
+      "true";
+
+    mobileButton.setAttribute(
+      "aria-expanded",
+      String(!isOpen),
+    );
+
+    sidebarContent.classList.toggle(
+      "is-open",
+      !isOpen,
+    );
+  });
+
+
+  // -----------------------------
+  // 大項目：アコーディオン
+  // -----------------------------
+
+  const categoryButtons =
+    document.querySelectorAll<HTMLButtonElement>(
+      ".category-button",
+    );
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const children =
+        button.nextElementSibling as HTMLElement | null;
+
+      if (!children) return;
+
+      const isOpen =
+        button.getAttribute("aria-expanded") ===
+        "true";
+
+      button.setAttribute(
+        "aria-expanded",
+        String(!isOpen),
+      );
+
+      children.classList.toggle(
+        "is-open",
+        !isOpen,
+      );
+
+      const arrow =
+        button.querySelector<HTMLElement>(
+          ".arrow",
+        );
+
+      if (arrow) {
+        arrow.textContent =
+          isOpen ? "+" : "−";
+      }
+    });
+  });
+</script>
+

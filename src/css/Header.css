@@ -1,0 +1,85 @@
+.header {
+position: relative;
+z-index: 100;
+
+border-bottom: 1px solid #eaeaea;
+background: linear-gradient(
+to right,
+#FFBFAF,
+#FFD9BD
+);
+}
+
+.header-inner {
+width: min(100% - 32px, 1200px);
+min-height: 64px;
+margin: 0 auto;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+color: #fff;
+font-size: 1.1rem;
+font-weight: 700;
+text-decoration: none;
+}
+
+.nav {
+display: flex;
+align-items: stretch;
+align-self: stretch;
+gap: 2px;
+}
+
+.nav-link {
+min-width: 100px;
+
+display: flex;
+align-items: center;
+
+color: #fff;
+font-size: 0.9rem;
+font-weight: 500;
+text-decoration: none;
+
+padding-right: 20px;
+padding-left: 20px;
+
+transition: color 0.2s ease;
+}
+
+/*
+* マウスオーバー
+*/
+.nav-link:hover {
+color: #111;
+}
+
+/*
+* 選択中
+*/
+.nav-link[aria-current="page"] {
+color: #fa8072;
+font-weight: 600;
+background-color: #fff;
+
+border-bottom: solid 2px #fa8072;
+}
+
+@media (max-width: 1200px) {
+.header-inner {
+    width: min(100% - 24px, 1200px);
+    min-height: 56px;
+}
+
+.nav {
+    gap: 16px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+}
+}

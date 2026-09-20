@@ -1,0 +1,56 @@
+/* Markdownの見出し */
+.main h1 {
+  margin: 0 0 48px;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.main h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.main h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Markdownの本文 */
+.main p {
+  margin: 1.5rem 0;
+  line-height: 1.9;
+}
+
+/* リスト */
+.main ul,
+.main ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.9;
+}
+
+/* リンク */
+.main a {
+  color: #06c;
+  text-decoration: underline;
+}
+
+/* 画像 */
+.main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem 0;
+}
+
+/* 引用 */
+.main blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid #ddd;
+  color: #666;
+  background: #f8f8f8;
+}
