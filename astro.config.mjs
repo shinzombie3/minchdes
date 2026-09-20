@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://shinzombie3.github.io/minchdes',
+    site: 'https://shinzombie3.github.io',
     base: '/minchdes',
 });
