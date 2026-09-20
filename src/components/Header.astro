@@ -6,8 +6,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const currentPath = Astro.url.pathname;
 
 const isCurrent = (path: string) => {
-  return currentPath === `${base}/${path}`;
-};
+  const target = `${base}/${path}`;
+
+  if (path === "") {
+    return currentPath === target;
+  }
+
+  return currentPath === target || currentPath.startsWith(target);
+};;
 ---
 
 <header class="header">
