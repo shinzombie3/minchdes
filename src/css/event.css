@@ -60,8 +60,7 @@
 
     flex: 0 0 220px;
     object-fit: cover;
-    border-radius: 12px;
-    background: #fff5f2;
+    background: #fff;
 }
 
 .row-container.hanpu {
@@ -78,7 +77,6 @@
     object-fit: contain;
 
     transition: opacity 0.7 ease;
-    background-color: #fff;
 }
 
 .hasLink:hover {
@@ -141,7 +139,7 @@
     }
 
     .row-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: stretch;
         gap: 20px;
     }
@@ -152,7 +150,9 @@
     }
 
     .row-container > img {
-        width: 50%;
+        width: 30%;
+        min-width: 180px;
+        height: auto;
 
         flex-basis: auto;
     }

@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
+import Gif from "../components/gif.astro";
 import "../css/global.css";
 import "../css/md.css";
 
@@ -43,6 +44,7 @@ const {
 
       <main class="main">
         <slot />
+        <Gif />
       </main>
     </div>
   </body>

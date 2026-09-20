@@ -15,9 +15,9 @@ line-height: 1.2;
 }
 
 @media (max-width: 768px) {
-.page {
-    padding: 56px 0;
-}
+/* .page {
+    padding: 20px 0;
+} */
 
 .container {
     width: min(100% - 32px, 900px);

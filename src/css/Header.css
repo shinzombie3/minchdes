@@ -27,6 +27,7 @@ color: #fff;
 font-size: 1.6rem;
 font-weight: 700;
 text-decoration: none;
+text-wrap: nowrap;
 }
 
 .nav {
@@ -75,13 +76,25 @@ border-bottom: solid 2px #fa8072;
 .header-inner {
     width: min(100% - 24px, 1200px);
     min-height: 56px;
+    max-height: 300px;
 }
 
 .nav {
-    gap: 16px;
+    gap: 5px;
 }
 
 .nav-link {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
+}
+}
+
+@media (max-width: 768px) {
+
+.logo {
+    display: none;
+}
+
+.header-inner {
+    justify-content: center;
 }
 }
