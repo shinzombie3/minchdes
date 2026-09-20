@@ -1,0 +1,163 @@
+.event-card {
+    width: 100%;
+    margin: 20px 0;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        4px 4px 12px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+ * Header
+ * ========================= */
+
+.article-header {
+    padding: 16px 24px 12px;
+
+    background: linear-gradient(
+        135deg,
+        #FFBFAF,
+        #FFD9BD
+    );
+}
+
+.article-header h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* =========================
+ * Main
+ * ========================= */
+
+.article-main {
+    padding: 20px 24px;
+}
+
+.row-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* イベント画像 */
+
+.row-container > img {
+    width: 20%;
+    /* height: 150px; */
+
+    flex: 0 0 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #fff5f2;
+}
+
+.row-container.hanpu {
+    margin-top: 10px;
+    gap: 8px;
+}
+
+.row-container.hanpu img {
+    height: 200px;
+    width: auto;
+    max-width: 200px;
+    border-radius: 0;
+    flex: 0 1 auto;
+    object-fit: contain;
+
+    transition: opacity 0.7 ease;
+    background-color: #fff;
+}
+
+.hasLink:hover {
+    opacity: 0.7;
+}
+
+.sinkan-yotei {
+    display: flex;
+    height: 200px;
+    width: 145px;
+
+    padding: 0px 10px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #c0c0c0;
+    color: #fff;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+ * Event information
+ * ========================= */
+
+.column-container {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.event-info {
+    text-align: left;
+    color: #696969;
+}
+
+.event-info strong {
+    display: block;
+}
+
+.event-date {
+    color: #a08076;
+}
+
+.event-name{
+    font-size: 2.6rem;
+    color: #fa8072;
+}
+
+.space-number {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .article-main {
+        padding: 20px;
+    }
+
+    .row-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .row-container.hanpu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .row-container > img {
+        width: 50%;
+
+        flex-basis: auto;
+    }
+
+    .event-info {
+        grid-template-columns: 80px 1fr;
+    }
+}

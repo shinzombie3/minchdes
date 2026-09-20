@@ -1,25 +1,17 @@
-/* .page {
-padding: 50px 10px;
-} */
-
-.container {
-width: min(100% - 48px, 900px);
-margin: 0 auto;
-}
-
 .container {
 width: min(100% - 48px, 900px);
 margin: 0 auto;
 }
 
 h1 {
-margin: 0 0 32px;
+margin: 0;
 font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
+
 p {
 color: #666;
-line-height: 1.8;
+line-height: 1.2;
 }
 
 @media (max-width: 768px) {

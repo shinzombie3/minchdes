@@ -1,30 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../css/page.css";
+import "../css/event.css";
+
+import sc from "../assets/sc.jpg";
+import kikan from "../assets/kikan1.jpg";
+import charm from "../assets/item1.jpg";
+
+const eventDate = "2026-10-11 東京ビッグサイト"
+const eventName = "幻想見聞録"
+const venueName = "【COMIC CITY SPARK 21】内"
+const spaceNumber = "西４ホール P45a"
 ---
 
 <Layout title="Home | My Site">
   <section class="page">
     <div class="container">
       <p class="eyebrow">HOME</p>
+      <h2>おしらせとか</h2>
+      <article class="event-card">
+        <div class="article-container">
 
-      <h1>
-        My Site
-      </h1>
+          <div class="article-header">
+            <h2>次のイベント予定</h2>
+          </div>
 
-      <p>
-        シンプルなAstroサイトです。
-      </p>
+          <div class="article-main">
+            <div class="row-container">
+              <img src={sc.src} alt="イベント画像">
 
-      <p>
-        ヘッダーから各ページへ移動できます。
-      </p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      
+              <div class="column-container">
+                <div class="event-info">
+                  <strong class="event-date">{eventDate}</strong>
+                </div>
+                <div class="event-info">
+                  <strong class="venue-name">{venueName}</strong>
+                </div>
+                <div class="event-info">
+                  <strong class="event-name">{eventName}</strong>
+                </div>
+                <div class="event-info">
+                  <strong class="space-number">スペース番号：{spaceNumber}</strong>
+                </div>
+
+                <br>
+                主バジのえろ本を出します！！<br>
+                間に合ったらもう一冊出したいです！
+
+              </div>
+            </div>
+
+              <hr>
+                ↓頒布予定↓
+                <div class="row-container hanpu">
+                  <span class="sinkan-yotei">新刊①<br>主バジ<br>成人向け</span>
+                  <span class="sinkan-yotei">新刊②<br>出せたら…</span>
+                  <a href="https://ec.toranoana.jp/joshi_r/ec/item/040031309175" target="_blank" rel="noopener noreferrer">
+                    <img class="hasLink" src={kikan.src}>
+                  </a>
+                  <img src={charm.src}>
+                </div>
+          </div>
+
+        </div>
+      </article>  
     </div>
   </section>
 </Layout>

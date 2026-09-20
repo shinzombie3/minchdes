@@ -7,12 +7,26 @@ import "../../css/page.css";
   <section class="page">
     <div class="container">
       <p class="eyebrow">CONTENTS</p>
-      <hr>
-      <h1>Contents</h1>
-
-      <p>
-        左側のメニューからコンテンツを選択してください。
-      </p>
+      <h1>書いたものとか</h1>
+      <p id="message"></p>
+      ゲームの感想とか置く予定<br>
+      今は何もないよ
     </div>
   </section>
+  <script>
+    const message = document.querySelector("#message");
+
+    const updateMessage = () => {
+      if (message) {
+        message.textContent =
+          window.innerWidth >= 1199
+            ? "右側のサイドバーからえらんでね"
+            : "上部のハンバーガーメニューからえらんでね";
+      }
+    };
+
+    updateMessage();
+
+    window.addEventListener("resize", updateMessage);
+  </script>
 </Layout>

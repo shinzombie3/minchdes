@@ -1,8 +1,9 @@
+@import url(https://fonts.googleapis.com/earlyaccess/sawarabigothic.css);
+
 .header {
 position: relative;
 z-index: 100;
 
-border-bottom: 1px solid #eaeaea;
 background: linear-gradient(
 to right,
 #FFBFAF,
@@ -21,8 +22,9 @@ justify-content: space-between;
 }
 
 .logo {
+font-family: 'Sawarabi Gothic';
 color: #fff;
-font-size: 1.1rem;
+font-size: 1.6rem;
 font-weight: 700;
 text-decoration: none;
 }
@@ -41,8 +43,8 @@ display: flex;
 align-items: center;
 
 color: #fff;
-font-size: 0.9rem;
-font-weight: 500;
+font-size: 1.2rem;
+font-weight: 400;
 text-decoration: none;
 
 padding-right: 20px;
@@ -55,7 +57,7 @@ transition: color 0.2s ease;
 * マウスオーバー
 */
 .nav-link:hover {
-color: #111;
+color: #fa8072;
 }
 
 /*
@@ -63,7 +65,7 @@ color: #111;
 */
 .nav-link[aria-current="page"] {
 color: #fa8072;
-font-weight: 600;
+font-weight: 500;
 background-color: #fff;
 
 border-bottom: solid 2px #fa8072;
