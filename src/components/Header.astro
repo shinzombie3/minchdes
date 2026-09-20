@@ -1,46 +1,39 @@
 ---
-import "../css/Header.css";
-
-const pathname = Astro.url.pathname;
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
 
 const isCurrent = (path: string) => {
-  // Home
-  if (path === "/") {
-    return pathname === "/";
-  }
-
-  // 下層ページも選択状態にする
-  return pathname === path || pathname.startsWith(`${path}/`);
+  return currentPath === `${base}${path}`;
 };
 ---
 
 <header class="header">
   <div class="header-inner">
-    <a href="/minchdes/" class="logo">
+    <a href={base} class="logo">
       仮
     </a>
 
     <nav class="nav" aria-label="メインメニュー">
       <a
-        href="/minchdes/"
+        href={base}
         class="nav-link"
-        aria-current={isCurrent("/minchdes/") ? "page" : undefined}
+        aria-current={isCurrent("") ? "page" : undefined}
       >
         Home
       </a>
 
       <a
-        href="/minchdes/contents/"
+        href={`${base}contents/`}
         class="nav-link"
-        aria-current={isCurrent("/minchdes/contents") ? "page" : undefined}
+        aria-current={isCurrent("contents/") ? "page" : undefined}
       >
         Contents
       </a>
 
       <a
-        href="/minchdes/about/"
+        href={`${base}about/`}
         class="nav-link"
-        aria-current={isCurrent("/minchdes/about") ? "page" : undefined}
+        aria-current={isCurrent("about/") ? "page" : undefined}
       >
         About
       </a>
