@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/earlyaccess/sawarabigothic.css);
 /* =================================
  * Base
  * =================================
@@ -19,12 +20,13 @@ html {
     sans-serif;
 
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
 
   color: #222;
   background: #fff;
 
   overflow: hidden;
+  font-family: 'Sawarabi Gothic';
 }
 
 body {
@@ -122,7 +124,7 @@ header {
  */
 
 @media (max-width: 1200px) {
-  .layout.has-sidebar {
+  .layout {
     display: flex;
     flex-direction: column;
 

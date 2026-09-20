@@ -1,4 +1,4 @@
-/* Markdownの見出し */
+
 .main h1 {
   margin: 0 0 48px;
   font-size: 2rem;
@@ -6,7 +6,7 @@
 }
 
 .main h2 {
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 1.5;
@@ -20,8 +20,9 @@
 
 /* Markdownの本文 */
 .main p {
-  margin: 1.5rem 0;
+  /* margin: 0; */
   line-height: 1.9;
+  margin-block-start: 0.5rem;;
 }
 
 /* リスト */
@@ -43,7 +44,7 @@
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 2rem 0;
+  /* margin: 1rem 0; */
 }
 
 /* 引用 */
